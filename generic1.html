@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Activity 1 - TTU - Cyber Forensics</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<img src="images/TTUCS-logo.JPG" alt="" />
+									<!--<span class="symbol"></span><span class="title"></span>-->
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic1.html">Activity 1</a></li>
+							<li><a href="generic2.html">Activity 2</a></li>
+							<li><a href="generic3.html">Activity 3</a></li>
+							<li><a href="generic4.html">Activity 4</a></li>
+							<li><a href="generic5.html">Activity 5</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Activity 1</h1>
+							<!--<span class="image main"><img src="images/pic13.jpg" alt="" /></span>-->
+							<span class="image main"><img src="images/ttu/images/pic1.jpg" alt=""/></span>
+							<br>
+							<pre>                                                                                  <b>Estimated Time: 30 Minutes</b></pre>
+							<h2><font size="6">&#8608;</font><font color="blue">1.1</font> Scenario</h2>
+							<p>Jack and Jill are friends who trust each other. Jack is using an app in her cellphone which asks for a username and password. Jill wants to surprise Jack with her hacking skills. So, she wants to modify this app in a way that puts the input username and password in the log and send them to a prepared server.</p>
+							<br>
+							<h2><font size="6">&#8608;</font><font color="blue">1.2</font> Objective</h2>
+							<p>
+								<ul>
+								<li>In this Activity 1, a signed APK file is generated along with key store file (<a href="https://en.wikipedia.org/wiki/Java_KeyStore#:~:text=A%20Java%20KeyStore%20(JKS)%20is,jks%20serves%20as%20a%20keystore."  style="text-decoration:none" onmouseover="style='text-decoration:underline'" onmouseout="style='text-decoration:none'">jks</a>).</li>
+								</ul>
+							</p>
+							<br>
+							<h2><font size="6">&#8608;</font><font color="blue">1.3</font> Prerequisites</h2>
+							<p>
+								<ul>
+								<li>A computer with <a href="https://en.wikipedia.org/wiki/Android_Studio"  style="text-decoration:none" onmouseover="style='text-decoration:underline'" onmouseout="style='text-decoration:none'">Android Studio</a> installed.</li>
+								<li>An Android emulator or device to test the app on.</li>
+								<li>Python installed on the computer.</li>
+								<li><a href="https://www.geeksforgeeks.org/jdk-in-java/"  style="text-decoration:none" onmouseover="style='text-decoration:underline'" onmouseout="style='text-decoration:none'">JDK</a> installed on the computer</li>
+								</ul>
+							</p>
+							<br>
+							<h2><font size="6">&#8608;</font><font color="blue">1.4</font> Artifacts</h2>
+							<p>Click below link to download APK file<br>
+								<a href="images/ttu/Activity1/app-release.apk">app-release.apk</a>
+							</p>
+							<br>
+							<h2><font size="6">&#8608;</font><font color="blue">1.5</font> Instructions</h2>
+							<p>
+								<ul>
+									<li>Step 1: This learning project requires a computer installed with Android Studio.</li>
+									&emsp;&emsp;&emsp;(Useful YouTube video link for Android Studio setup)<br>
+									&emsp;&emsp;&emsp;<a href="https://www.youtube.com/watch?v=0zx_eFyHRU0">https://www.youtube.com/watch?v=0zx_eFyHRU0</a>
+									<br>
+									<li>Step 2: You need to install python on your computer for running the server in Activity 4.</li>
+									&emsp;&emsp;&emsp;(Useful YouTube video link for Python setup on computer)<br>
+									&emsp;&emsp;&emsp;<a href="https://www.youtube.com/watch?v=Kn1HF3oD19c">https://www.youtube.com/watch?v=Kn1HF3oD19c</a>
+									<br>
+									<li>Step 3: You need to have jdk installed on your computer for running java-based commands in next Activities.</li>
+									&emsp;&emsp;&emsp;(Useful YouTube video link for JDK setup on computer)<br>
+									&emsp;&emsp;&emsp;<a href="https://www.youtube.com/watch?v=IJ-PJbvJBGs">https://www.youtube.com/watch?v=IJ-PJbvJBGs</a>
+									<br>
+									<li>Step 4: We shall start by creating an APK file and key store file using Android Studio software.</li>
+									&emsp;&emsp;&emsp;(Note: We have taken Android Studio 3+ version for this tutorial)
+									<br>
+									<br>
+									<li>Step 5: Open Android Studio -> Click 'Build' -> Generate Signed APK</li>
+									&emsp;&emsp;&emsp;<img src="images/ttu/Activity1/AndroidStudio-Generate-APK.png" width="50%" height="50%">
+									<br>
+									<li>Step 6: On the Generate APK page click "Create New" button for creating a key store first. We need to create key store beforehand for signing the APK file.</li>
+									&emsp;&emsp;&emsp;<img src="images/ttu/Activity1/Create-New-Key-Store-1.PNG" width="50%" height="50%">
+									<br>
+									<li>Step 7: On the "New Key Store" page, we need to fill details.</li>
+									&emsp;&emsp;&emsp;key store path: <set path for storing keystore file on your computer and make a note of it><br>
+									&emsp;&emsp;&emsp;password: <set password and make a note of it><br>
+									&emsp;&emsp;&emsp;Alias: <set an alias name and make a note of it><br>
+									&emsp;&emsp;&emsp;First and Last Name: <Here you can put your first and last names and make a note of it> <br>
+									&emsp;&emsp;&emsp;For remaining fields, you can refer below screenshot<br>
+									&emsp;&emsp;&emsp;<img src="images/ttu/Activity1/New-key-store-page.PNG" width="50%" height="50%">
+									<br>
+									<li>Step 8: After filling details and clicking OK on "New Key Store", you will be redirected to "Generate Signed APK" again. But this time you will see fields auto filled.</li>
+									&emsp;&emsp;&emsp;<img src="images/ttu/Activity1/AutoFilled-Generate-APK-Page.PNG" width="50%" height="50%">
+									<br>
+									<li>Step 9: Click Next -> Build Type "Release" -> Finish -> Signed APK generated Successfully</li>
+									<br>
+									<li>Step 10: From above steps we need key store file "p9cert.jks"</li>
+									<br>
+									<li>Step 11: Signed APK file for the app is directly provided under "Activity 1: Artifacts" section with name "app-release.apk"</li>
+									</ul>
+									
+							</p>
+							<br>
+							<h2><font size="6">&#8608;</font><font color="blue">1.6</font><font color="orange">&starf; &starf; &starf;</font> Self-Assessment <font color="orange">&starf; &starf; &starf;</font> </h2>
+							<p>Please complete the following self-assessment over Activity 1</p>
+							<a href="Challenge1.html">Start Assessment</a>
+							<br>
+							<h2><font size="6">&#8608;</font><font color="blue">1.7</font><font color="orange"></font> Activity 1 - Feedback <font color="orange"></font> 😍😁😶🙁😞</h2>
+							<p>Please complete the following survey questions over Activity 1</p>
+							<a href="https://educttu.az1.qualtrics.com/jfe/form/SV_6nvOIWF0tQEvQRU ">Start Survey Questions</a>
+							
+							
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Contact Us</h2>
+								<form method="post" action="https://formspree.io/f/xoqrzgeo">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Texas Tech University. All rights reserved</li>
+								<!--<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>-->
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<link rel="stylesheet" href="AIchat.v1.css" type="text/css" media="screen" />
+			<script type="text/javascript" src="dependencies.v1.js"></script>
+			 <script type="text/javascript" src="AIchat.v1.js"></script>
+	</body>
+</html>

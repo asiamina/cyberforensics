@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+    <form method="post" action="https://formspree.io/f/xoqrzgeo" id="form_id">
+    <p><b>Activity 3: Self-Assessment<br>
+    Instructions : Please answer the following questions related to Activity 3</b></p>
+	<p>Question 1: What does "b" represent in command "java -jar apktool_2.0.0rc3.jar b app-release" ?</p>
+    <p>(Hint: Check for instructions with commands 'java -jar apktool_2.0.0rc3.jar --help')</p>
+	<input type="radio" name="question1" id="correct1" value="build"><label for="build"> build </label><br>
+	<input type="radio" name="question1" value="bond"><label for="bond"> bond </label><br>
+	<input type="radio" name="question1" value="break"><label for="break"> break </label><br>
+	<input type="radio" name="question1" value="boot"><label for="boot"> boot </label><br>
+	<br><br>
+    <p>Question 2: What is the command to check java version installed in your computer?</p>
+    <p>(Hint: open command prompt / terminal and give command "java --help" for instructions without quotes)</p>
+	<input type="radio" name="question2" id="correct2" value="java --version"><label for="java --version"> java --version </label><br>
+	<input type="radio" name="question2" value="java version"><label for="java version"> java version </label><br>
+	<input type="radio" name="question2" value="java --v"><label for="java --v"> java --v </label><br>
+	<input type="radio" name="question2" value="java -v"><label for="java -v"> java -v </label><br>
+	<br><br>
+	<p>Question 3: Will there be "bin" folder in path set for JAVA_HOME environment variable ?</p>
+	<input type="radio" name="question3" id="correct3" value="True"><label for="True"> True </label><br>
+	<input type="radio" name="question3" value="False"><label for="True">  False </label><br>
+	<br><br>
+    <p>Question 4: You get 'jarsigner not found' error when jdk path is not set properly in PATH and JAVA_HOME environment variables ?</p>
+	<input type="radio" name="question4" id="correct4" value="True"><label for="True"> True </label><br>
+	<input type="radio" name="question4" value="False"><label for="True">  False </label><br>
+	<br><br>
+	<p>Question 5: What is file with .jks extension represent? ?</p>
+	<input type="radio" name="question5" id="correct5" value="keystore file"><label for="keystore file"> keystore file </label><br>
+	<input type="radio" name="question5" value="java class file"><label for="java class file"> java class file </label><br>
+	<input type="radio" name="question5" value="media file"><label for="media file"> media file </label><br>
+	<input type="radio" name="question5" value="text file"><label for="text file"> text file </label><br>
+	<br><br>
+
+    <br>
+    <p>Please provide your name and email to register an attempt for the assessment</p>
+    <br>
+    <div class="fields">
+        <div class="field half">
+            <input type="text" name="name" id="name" placeholder="Name" />
+        </div>
+        <div class="field half">
+            <input type="email" name="email" id="email" placeholder="Email" />
+        </div>
+    </div>
+    <ul class="actions">
+        <li><button onclick="result()">Check Score</button></li>
+        <p id="demo"></p>
+        <li><input type="submit" value="Submit Your Answers" class="primary" /></li>
+    </ul>
+
+    </form>
+
+    <script>
+        function result() {
+            var score=0;
+            if (document.getElementById('correct1').checked) {
+                score++;
+            }
+            if (document.getElementById('correct2').checked) {
+                score++;
+            }
+            if (document.getElementById('correct3').checked) {
+                score++;
+            }
+            if (document.getElementById('correct4').checked) {
+                score++;
+            }
+            if (document.getElementById('correct5').checked) {
+                score++;
+            }
+        
+
+            if (score >= 4) {
+                document.getElementById("demo").innerHTML = "Your score is: "+score+"/5"+"\n   Congratulations, you have answered more than 75% of the questions correctly and can proceed for next Activity.";
+            } else {
+                document.getElementById("demo").innerHTML = "Your score is: "+score+"/5"+"\n   It is recommended that you retry Activity 3 until you receive a score of 4 or better.";
+            }
+
+            console.log("Hello");
+            setTimeout(() => { console.log("World!"); }, 10000);
+            console.log("Goodbye!");
+        }
+    </script>
+</body>
+</html>

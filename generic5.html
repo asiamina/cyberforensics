@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Activity 5 - TTU - Cyber Forensics</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<img src="images/TTUCS-logo.JPG" alt="" />
+									<!--<span class="symbol"></span><span class="title"></span>-->
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic1.html">Activity 1</a></li>
+							<li><a href="generic2.html">Activity 2</a></li>
+							<li><a href="generic3.html">Activity 3</a></li>
+							<li><a href="generic4.html">Activity 4</a></li>
+							<li><a href="generic5.html">Activity 5</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+				<div id="main">
+					<div class="inner">
+						<h1>Activity 5</h1>
+						<!--<span class="image main"><img src="images/pic13.jpg" alt="" /></span>-->
+						<span class="image main"><img src="images/ttu/images/pic5.jpg" alt="" /></span>
+						<br>
+						<pre>                                                                                  <b>Estimated Time: 15 Minutes</b></pre>
+						<h2><font size="6">&#8608;</font><font color="blue">1.1</font> Objective</h2>
+							<p>
+								<ul>
+								<li>In this Activity 5, the installed app from previous activity is modified to connect with <a href="https://pythonbasics.org/webserver/"  style="text-decoration:none" onmouseover="style='text-decoration:underline'" onmouseout="style='text-decoration:none'">Python web server</a> running on local computer and login credentials are monitored on Logcat window.</li>
+								</ul>
+							</p>
+						
+						<h2><font size="6">&#8608;</font><font color="blue">1.2</font> Description</h2>
+						<p>In this Activity, we will modify settings inside app to connect with python web server setup on local system and monitor the logs using "Logcat" on Android Studio.</p>
+						<br>
+						<h2><font size="6">&#8608;</font><font color="blue">1.3</font> Instructions</h2>
+						<p>
+							<ul>
+								<li>Step 1: Leave the python web server running on port 8080. Do not disturb the server.</li>
+								<br>
+								<li>Step 2: Open new command prompt window and check your system ip address with command "ipconfig". Make a note of IPv4 address in the ipconfig command output.</li>
+								<br>
+								<li>Step 3: Now go to android studio -> AVD (Android Virtual Device) -> Run Device in emulator -> Open app (which is installed through login.apk file)</li>
+								<br>
+								<li>Step 4: Inside the app, at the lower right corner, click the three-dot icon.</li>
+								<br>
+								<li>Step 5: Click Reset, Click the three-dot icon again.</li>
+								<br>
+								<li>Step 6: Click "Preferences" -> Click "Bank Service Address" -> Put your system ip address identified from Step2 here.</li>
+								<br>&emsp;&emsp;&emsp;<img src="images/ttu/Activity5/bank-service-address.PNG" width="50%" height="50%">
+								<br>
+								<li>Step 7: Similarly go to "Preferences" page again -> Click "HTTP Port" -> Set port as 8080</li>
+								<br>
+								<li>Step 8: Now go to app login page (start page) and enter credentials. Default account credentials are provided on the same login page.</li>
+								<br>
+								<li>Step 9: When you enter credentials and click "Login" button, you can see logs in "Logcat" window.</li>
+								<br>&emsp;&emsp;&emsp;<img src="images/ttu/Activity5/logcat.PNG" width="100%" height="100%">
+								<br>
+								<li>Step 10: Take a screenshot of logs in "Logcat" window showing the credentials in plaintext format. Please send the screenshot to Professor through mail for submission.</li>
+							</ul>	
+						</p>
+						<br>
+						<h2><font size="6">&#8608;</font><font color="blue">1.4</font><font color="orange">&starf; &starf; &starf;</font> Self-Assessment <font color="orange">&starf; &starf; &starf;</font> </h2>
+						<p>Please complete the following self-assessment over Activity 5</p>
+						<a href="Challenge5.html">Start Assessment</a>
+						<br>
+						<h2><font size="6">&#8608;</font><font color="blue">1.5</font><font color="orange"></font> Activity 5 - Feedback <font color="orange"></font> 😍😁😶🙁😞</h2>
+						<p>Please complete the following survey questions over Activity 5</p>
+						<a href="https://educttu.az1.qualtrics.com/jfe/form/SV_cBfXvZ69tCEhUGy">Start Survey Questions</a>
+						
+						
+					</div>
+				</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Contact Us</h2>
+								<form method="post" action="https://formspree.io/f/xoqrzgeo">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Texas Tech University. All rights reserved</li>
+								<!--<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>-->
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<link rel="stylesheet" href="AIchat.v1.css" type="text/css" media="screen" />
+			<script type="text/javascript" src="dependencies.v1.js"></script>
+			 <script type="text/javascript" src="AIchat.v1.js"></script>
+	</body>
+</html>

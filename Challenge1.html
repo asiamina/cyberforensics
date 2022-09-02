@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+    <form method="post" action="https://formspree.io/f/xoqrzgeo" id="form_id">
+	<p><b>Activity 1: Self-Assessment<br>
+    Instructions : Please answer the following questions related to Activity 1</b></p>
+	<p>Question 1: What is the name of android application? ?</p>
+	<input type="radio" name="question1" id="correct1" value="app-release"><label for="app-release"> app-release </label><br>
+	<input type="radio" name="question1" value="calc_app"><label for="calc_app"> calc_app </label><br>
+	<input type="radio" name="question1" value="assist-release"><label for="assist-release"> assist-release </label><br>
+	<input type="radio" name="question1" value="app-clock"><label for="app-clock"> app-clock </label><br>
+	<br><br>
+    <p>Question 2: What is the extension of the file ?</p>
+	<input type="radio" name="question2" value=".ipa"><label for=".ipa"> .ipa </label><br>
+	<input type="radio" name="question2" id="correct2" value=".apk"><label for=".apk"> .apk </label><br>
+	<input type="radio" name="question2" value=".msi"><label for=".msi"> .msi </label><br>
+	<input type="radio" name="question2" value=".exe"><label for=".exe"> .exe </label><br>
+	<br><br>
+    <p>Question 3: What is the file size approximately ?</p>
+	<input type="radio" name="question3" value="230k"><label for="230k"> 230k </label><br>
+	<input type="radio" name="question3" id="correct3" value="130k"><label for="130k"> 130k </label><br>
+	<input type="radio" name="question3" value="330"><label for="330k"> 330k </label><br>
+	<input type="radio" name="question3" value="30k"><label for="30k"> 30k </label><br>
+	<br><br>
+    <p>Question 4: What is the value of "Organization" field ?</p>
+	<input type="radio" name="question4" value="Hello World Inc."><label for="Hello World Inc."> Hello World Inc. </label><br>
+	<input type="radio" name="question4" value="CEE"><label for="CEE"> CEE </label><br>
+	<input type="radio" name="question4" value="Microsoft"><label for="Microsoft"> Microsoft </label><br>
+	<input type="radio" name="question4" id="correct4" value="World Domination Inc."><label for="World Domination Inc."> World Domination Inc. </label><br>
+	<br><br>
+    <p>Question 5: Which of the following is not used for signing an android project ?</p>
+	<input type="radio" name="question5" value="alias"><label for="alias"> alias </label><br>
+	<input type="radio" name="question5" id="correct5" value="expiration"><label for="expiration"> expiration </label><br>
+	<input type="radio" name="question5" value="key store password"><label for="key store password"> key store password </label><br>
+	<input type="radio" name="question5" value="key store path"><label for="key store path"> key store path </label><br>
+	<br><br>
+    <p>Question 6: What is the extension of the signing certificate ?</p>
+	<input type="radio" name="question6" value=".exe"><label for=".exe"> .exe </label><br>
+	<input type="radio" name="question6" value=".msi"><label for=".msi"> .msi </label><br>
+	<input type="radio" name="question6" id="correct6" value=".jks"><label for=".jks"> .jks </label><br>
+	<input type="radio" name="question6" value=".ipa"><label for=".ipa"> .ipa </label><br>
+	<br><br>
+    <p>Question 7: What is the size (approximately) of signing certificate file (jks file)?</p>
+	<input type="radio" name="question7" value="more than 5k"><label for="more than 5k"> more than 5k </label><br>
+	<input type="radio" name="question7" value="more than 15k"><label for="more than 15k"> more than 15k </label><br>
+	<input type="radio" name="question7" id="correct7" value="less than 5k"><label for="less than 5k"> less than 5k </label><br>
+	<input type="radio" name="question7" value="10k"><label for="10k"> 10k </label><br>
+	<br><br>
+    
+	
+    <br>
+    <p>Please provide your name and email to register an attempt for the assessment</p>
+    <br>
+    <div class="fields">
+        <div class="field half">
+            <input type="text" name="name" id="name" placeholder="Name" />
+        </div>
+        <div class="field half">
+            <input type="email" name="email" id="email" placeholder="Email" />
+        </div>
+    </div>
+    <ul class="actions">
+        <li><button onclick="result()">Check Score</button></li>
+        <p id="demo"></p>
+        <li><input type="submit" value="Submit Your Answers" class="primary" /></li>
+    </ul>
+
+    </form>
+
+    <script>
+        function result() {
+            var score=0;
+            if (document.getElementById('correct1').checked) {
+                score++;
+            }
+            if (document.getElementById('correct2').checked) {
+                score++;
+            }
+            if (document.getElementById('correct3').checked) {
+                score++;
+            }
+            if (document.getElementById('correct4').checked) {
+                score++;
+            }
+            if (document.getElementById('correct5').checked) {
+                score++;
+            }
+            if (document.getElementById('correct6').checked) {
+                score++;
+            }
+            if (document.getElementById('correct7').checked) {
+                score++;
+            }
+            
+        
+            if (score >= 6) {
+                document.getElementById("demo").innerHTML = "Your score is: "+score+"/7"+"\n   Congratulations, you have answered more than 75% of the questions correctly and can proceed for next Activity.";
+            } else {
+                document.getElementById("demo").innerHTML = "Your score is: "+score+"/7"+"\n   It is recommended that you retry Activity 1 until you receive a score of 6 or better.";
+            }
+            console.log("Hello");
+            setTimeout(() => { console.log("World!"); }, 10000);
+            console.log("Goodbye!");
+        }
+    </script>
+</body>
+</html>

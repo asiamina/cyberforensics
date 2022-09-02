@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+    <form method="post" action="https://formspree.io/f/xoqrzgeo" id="form_id">
+    <p><b>Activity 4: Self-Assessment<br>
+    Instructions : Please answer the following questions related to Activity 4</b></p>
+	<p>Question 1: What is App name displayed on mobile screen after installing app-release.apk file ?</p>
+	<input type="radio" name="question1" id="correct1" value="EMM - Vulnerable"><label for="EMM - Vulnerable"> EMM - Vulnerable </label><br>
+	<input type="radio" name="question1" value="LabServer - master"><label for="LabServer - master"> LabServer - master </label><br>
+	<input type="radio" name="question1" value="App Release"><label for="App Release"> App Release </label><br>
+	<input type="radio" name="question1" value="Evil Trojaned App"><label for="Evil Trojaned App"> Evil Trojaned App </label><br>
+	<br><br>
+    <p>Question 2: When you open the app, what is the company name beside logo with blue background ?</p>
+	<input type="radio" name="question2" value="Compass"><label for="Compass"> Compass </label><br>
+	<input type="radio" name="question2" value="Security"><label for="Security"> Security </label><br>
+	<input type="radio" name="question2" id="correct2" value="Security Compass"><label for="Security Compass"> Security Compass </label><br>
+	<input type="radio" name="question2" value="LabServer"><label for="LabServer"> LabServer </label><br>
+	<br><br>
+	<p>Question 3: Is password box showing entered data as plaintext?</p>
+    <p>True - plaintext</p>
+    <p>False - showing asterisk symbol (*)</p>
+	<input type="radio" name="question3" value="True"><label for="True"> True </label><br>
+	<input type="radio" name="question3" id="correct3" value="False"><label for="True">  False </label><br>
+	<br><br>
+    <p>Question 4: Clicking 3 dots on app homepage shows only two options ?</p>
+	<input type="radio" name="question4" id="correct4" value="True"><label for="True"> True </label><br>
+	<input type="radio" name="question4" value="False"><label for="True">  False </label><br>
+	<br><br>
+	<p>Question 5: What are the two default accounts shown on homepage of app ?</p>
+	<input type="radio" name="question5" value="jdoe, jack"><label for="jdoe, jack"> jdoe, jack </label><br>
+	<input type="radio" name="question5" id="correct5" value="jdoe, bsmith"><label for="jdoe, bsmith"> jdoe, bsmith </label><br>
+	<input type="radio" name="question5" value="jack, jill"><label for="jack, jill"> jack, jill </label><br>
+	<input type="radio" name="question5" value="jdoe, andrew"><label for="jdoe, andrew"> jdoe, andrew </label><br>
+	<br><br>
+
+    <br>
+    <p>Please provide your name and email to register an attempt for the assessment</p>
+    <br>
+    <div class="fields">
+        <div class="field half">
+            <input type="text" name="name" id="name" placeholder="Name" />
+        </div>
+        <div class="field half">
+            <input type="email" name="email" id="email" placeholder="Email" />
+        </div>
+    </div>
+    <ul class="actions">
+        <li><button onclick="result()">Check Score</button></li>
+        <p id="demo"></p>
+        <li><input type="submit" value="Submit Your Answers" class="primary" /></li>
+    </ul>
+
+    </form>
+
+    <script>
+        function result() {
+            var score=0;
+            if (document.getElementById('correct1').checked) {
+                score++;
+            }
+            if (document.getElementById('correct2').checked) {
+                score++;
+            }
+            if (document.getElementById('correct3').checked) {
+                score++;
+            }
+            if (document.getElementById('correct4').checked) {
+                score++;
+            }
+            if (document.getElementById('correct5').checked) {
+                score++;
+            }
+        
+
+            if (score >= 4) {
+                document.getElementById("demo").innerHTML = "Your score is: "+score+"/5"+"\n   Congratulations, you have answered more than 75% of the questions correctly and can proceed for next Activity.";
+            } else {
+                document.getElementById("demo").innerHTML = "Your score is: "+score+"/5"+"\n   It is recommended that you retry Activity 4 until you receive a score of 4 or better.";
+            }
+
+            console.log("Hello");
+            setTimeout(() => { console.log("World!"); }, 10000);
+            console.log("Goodbye!");
+        }
+    </script>
+</body>
+</html>

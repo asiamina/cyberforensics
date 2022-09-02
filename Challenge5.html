@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+    <form method="post" action="https://formspree.io/f/xoqrzgeo" id="form_id">
+    <p><b>Activity 5: Self-Assessment<br>
+    Instructions : Please answer the following questions related to Activity 5</b></p>
+	<p>Question 1: In the Logcat window, "E/" before username and password output log represent "Error" ?</p>
+	<input type="radio" name="question1" id="correct1" value="True"><label for="True"> True </label><br>
+	<input type="radio" name="question1" value="False"><label for="True">  False </label><br>
+	<br><br>
+    <p>Question 2: What does each line in Logcat window starts with? (In android studio) ?</p>
+	<input type="radio" name="question2" id="correct2" value="Timestamp"><label for="Timestamp"> Timestamp </label><br>
+	<input type="radio" name="question2" value="Memory in bytes"><label for="Memory in bytes"> Memory in bytes </label><br>
+	<input type="radio" name="question2" value="Process ID"><label for="10"> 10 </label><br>
+	<input type="radio" name="question2" value="Application Name"><label for="Application Name"> Application Name </label><br>
+	<br><br>
+    <p>Question 3: After entering default account credentials and clicking "Login" button, you are redirected to a different page on app ?</p>
+	<input type="radio" name="question3" value="True"><label for="True"> True </label><br>
+	<input type="radio" name="question3" id="correct3" value="False"><label for="True">  False </label><br>
+	<br><br>
+    <p>Question 4: Which field in "IPCONFIG" command output will you choose for server IP Address ?</p>
+	<input type="radio" name="question4" id="correct4" value="IPv4 Address"><label for="IPv4 Address"> IPv4 Address </label><br>
+	<input type="radio" name="question4" value="Subnet Mask"><label for="Subnet Mask"> Subnet Mask </label><br>
+	<input type="radio" name="question4" value="Default Gateway"><label for="Default Gateway"> Default Gateway </label><br>
+	<input type="radio" name="question4" value="IPv6 Address"><label for="IPv6 Address"> IPv6 Address </label><br>
+	<br><br>
+    <p>Question 5: "HTTP Port" option under Preferences section has a checkbox in the app ?</p>
+	<input type="radio" name="question5" value="True"><label for="True"> True </label><br>
+	<input type="radio" name="question5" id="correct5" value="False"><label for="True">  False </label><br>
+	<br><br>
+    <p>Question 6: What option is not available under Preferences section of app ?</p>
+	<input type="radio" name="question6" value="HTTPS Port"><label for="HTTPS Port"> HTTPS Port </label><br>
+	<input type="radio" name="question6" value="HTTP Port"><label for="HTTP Port"> HTTP Port </label><br>
+	<input type="radio" name="question6" id="correct6" value="HTTPS Disabled"><label for="HTTPS Disabled"> HTTPS Disabled </label><br>
+	<input type="radio" name="question6" value="HTTPS Enabled"><label for="HTTPS Enabled"> HTTPS Enabled </label><br>
+	<br><br>
+    <p>Question 7: Below are the commands to setup web server with python ?</p>
+    <p>(Python2: python -m SimpleHTTPServer PortNumber)</p>
+    <p>(Python3: python -m http.server PortNumber)</p>
+	<input type="radio" name="question7" id="correct7" value="True"><label for="True"> True </label><br>
+	<input type="radio" name="question7" value="False"><label for="True">  False </label><br>
+	<br><br>
+    <p>Question 8: What programming language is used for running the server ?</p>
+	<input type="radio" name="question8" value="node"><label for="node"> node </label><br>
+	<input type="radio" name="question8" id="correct8" value="python"><label for="python"> python </label><br>
+	<input type="radio" name="question8" value="apache tomcat"><label for="apache tomcat"> apache tomcat </label><br>
+	<input type="radio" name="question8" value="java"><label for="java"> java </label><br>
+	<br><br>
+	<p>Question 9: What is the port number set for server ?</p>
+	<input type="radio" name="question9" id="correct9" value="8080"><label for="8080"> 8080 </label><br>
+	<input type="radio" name="question9" value="25"><label for="25"> 25 </label><br>
+	<input type="radio" name="question9" value="443"><label for="443"> 443 </label><br>
+	<input type="radio" name="question9" value="80"><label for="80"> 80 </label><br>
+	<br><br>
+    <p>Question 10: "D/" in logs of Logcat window represents debug ? (In Android Studio)</p>
+	<input type="radio" name="question10" id="correct10" value="True"><label for="True"> True </label><br>
+	<input type="radio" name="question10" value="False"><label for="True">  False </label><br>
+	<br><br>
+
+    <br>
+    <p>Please provide your name and email to register an attempt for the assessment</p>
+    <br>
+    <div class="fields">
+        <div class="field half">
+            <input type="text" name="name" id="name" placeholder="Name" />
+        </div>
+        <div class="field half">
+            <input type="email" name="email" id="email" placeholder="Email" />
+        </div>
+    </div>
+    <ul class="actions">
+        <li><button onclick="result()">Check Score</button></li>
+        <p id="demo"></p>
+        <li><input type="submit" value="Submit Your Answers" class="primary" /></li>
+    </ul>
+
+    </form>
+
+    <script>
+        function result() {
+            var score=0;
+            if (document.getElementById('correct1').checked) {
+                score++;
+            }
+            if (document.getElementById('correct2').checked) {
+                score++;
+            }
+            if (document.getElementById('correct3').checked) {
+                score++;
+            }
+            if (document.getElementById('correct4').checked) {
+                score++;
+            }
+            if (document.getElementById('correct5').checked) {
+                score++;
+            }
+            if (document.getElementById('correct6').checked) {
+                score++;
+            }
+            if (document.getElementById('correct7').checked) {
+                score++;
+            }
+            if (document.getElementById('correct8').checked) {
+                score++;
+            }
+            if (document.getElementById('correct9').checked) {
+                score++;
+            }
+            if (document.getElementById('correct10').checked) {
+                score++;
+            }
+        
+
+            if (score >= 8) {
+                document.getElementById("demo").innerHTML = "Your score is: "+score+"/10"+"\n   Congratulations, you have answered more than 75% of the questions correctly and can proceed for next Activity.";
+            } else {
+                document.getElementById("demo").innerHTML = "Your score is: "+score+"/10"+"\n   It is recommended that you retry Activity 5 until you receive a score of 8 or better.";
+            }
+
+            console.log("Hello");
+            setTimeout(() => { console.log("World!"); }, 10000);
+            console.log("Goodbye!");
+        }
+    </script>
+</body>
+</html>
