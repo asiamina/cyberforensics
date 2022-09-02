@@ -1,0 +1,194 @@
+<!-- The following line is essential for the "position: fixed" property to work correctly in IE -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//ES">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+  <head>
+    <title>Chatbot</title>
+    <meta charset="UTF-8">
+        
+        <style>@import url(http://fonts.googleapis.com/css?family=Lato);
+           
+#progress_bar {
+    margin: 10px 0;
+    padding: 3px;
+    border: 1px solid #000;
+    font-size: 14px;
+    clear: both;
+    opacity: 0;
+    -moz-transition: opacity 1s linear;
+    -o-transition: opacity 1s linear;
+    -webkit-transition: opacity 1s linear;
+  }
+  #progress_bar.loading {
+    opacity: 1.0;
+  }
+  #progress_bar .percent {
+    background-color: #99ccff;
+    height: auto;
+    width: 0;
+  }
+  
+  #loader {
+    position: absolute;
+      left:40%;
+  top:10%;
+
+}        
+        
+       
+</style>
+    <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.2.custom.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script>
+    <link type="text/css" href="EN/jquery.ui.chatboxmod.css" rel="stylesheet" />
+    <link type="text/css" href="head.css" rel="stylesheet" />
+    <script type="text/javascript" src="EN/jquery.ui.chatboxmod.js"></script>
+    <script type="text/javascript" src="AIchatloadfile.js"></script>
+    <script type="text/javascript" src="sinacento.js"></script>
+    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  
+    
+  </head>
+  <body>
+    <p>Upload a csv with headers Question, Answer, Weights(optional)</p>
+    <div id="loader">
+    <p align="center">Upload file<br><input type="file" id="files" name="files[]" multiple/>
+        </p>
+       <p align="center"> 
+           Success estimator (0-1)<br>
+  <input type="number" id="totalest" step="0.01" value="0.49" style="width: 50px;"></input>
+  <br>Error coef (0-1)<br>
+  <input type="number" id="totalcoef" step="0.05" value="0.7" style="width: 50px;"></input><br>
+  <input type="checkbox" id="weights" value="0" />Weights<br>
+  <input type="checkbox" id="memory" value="0" />Memory
+ </p>
+        <p align="center"><button onclick="abortRead();">Begin</button></p><div id="progress_bar"><div class="percent">0%</div></div>
+        
+        
+        
+    </div>  
+    <div id="chat_div">
+    </div>
+    
+    <div id="log">
+    </div>
+ <!-- Chat Head -->
+<a id="chat-head" href="#">
+  <i>1</i>
+</a>
+  </body>
+   <script type="text/javascript">
+
+     var reader;
+var arbol = 0;
+
+  var progress = document.querySelector('.percent');
+
+  function abortRead() {
+     
+    abrir(arbol);
+  }
+
+  function errorHandler(evt) {
+    switch(evt.target.error.code) {
+      case evt.target.error.NOT_FOUND_ERR:
+        alert('File Not Found!');
+        break;
+      case evt.target.error.NOT_READABLE_ERR:
+        alert('File is not readable');
+        break;
+      case evt.target.error.ABORT_ERR:
+        break; // noop
+      default:
+        alert('An error occurred reading this file.');
+    };
+  }
+
+  function updateProgress(evt) {
+    // evt is an ProgressEvent.
+    if (evt.lengthComputable) {
+      var percentLoaded = Math.round((evt.loaded / evt.total) * 100);
+      // Increase the progress bar length.
+      if (percentLoaded < 100) {
+        progress.style.width = percentLoaded + '%';
+        progress.textContent = percentLoaded + '%';
+      }
+    }
+  }
+
+  function handleFileSelect(evt) {
+    // Reset progress indicator on new file selection.
+    progress.style.width = '0%';
+    progress.textContent = '0%';
+
+    reader = new FileReader();
+    reader.onerror = errorHandler;
+    reader.onprogress = updateProgress;
+    reader.onabort = function(e) {
+      alert('File read cancelled');
+    };
+    reader.onloadstart = function(e) {
+      document.getElementById('progress_bar').className = 'loading';
+    };
+    reader.onload = function(e) {
+      // Ensure that the progress bar displays 100% at the end.
+      progress.style.width = '100%';
+      progress.textContent = '100%';
+      setTimeout("document.getElementById('progress_bar').className='';", 2000);
+      //alert(d3.csv.parse(reader.result));
+     // alert(reader.result);
+     if(arbol===0){arbol=d3.csv.parse(reader.result);}
+      
+    }
+
+    // Read in the image file as a binary string.
+    reader.readAsText(evt.target.files[0]);
+    //reader.readAsBinaryString(evt.target.files[0]);
+  }
+
+  document.getElementById('files').addEventListener('change', handleFileSelect, false); 
+        function getUrlParameter(sParam)
+{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) 
+        {
+            return sParameterName[1];
+        }
+    }
+}       
+        
+ function abrir(csv){       
+     var check = null;
+     var reg = /\, |\. /g; // list of words to omit, if you use weights do not set score for that word
+     var decider=$('#totalest').attr('value') // jacobian estimator for sucessful clasification
+     var lengthmax=20; // max sentence length before being divided by two sentences
+     var weights=0;
+     var memory=0; // 1 takes the last message sent into account for clasification. 0 does not.
+     var coef=$('#totalcoef').attr('value') // coefficient that allows typing errors and associates words with similar stem
+     if($("#weights").is(':checked'))  weights=1;  // checked
+     if($("#memory").is(':checked'))  memory=1;  // checked
+
+     
+     
+     
+     
+     $(document).ready(function () {
+  $('#chat-head').addClass('animate');
+  $("#chat-head").click(function() {
+      
+      if(check) { $("#chat_div").chatbox("option", "hidden", false);
+                  
+              }
+              else { init(csv,decider,reg,lengthmax,memory,coef,weights);check++;}
+   
+  });
+});}
+    </script>  
+</html>
+
+    </body>
+</html>
+
