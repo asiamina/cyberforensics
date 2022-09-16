@@ -37,6 +37,9 @@ The tentative topics and tools to be covered include:
 *	Creating APK file and JKS keystore file along with self signed certificate inside it
 *	Modifying APK file source code and injected malware into it
 
+## Documentation on Setup of this website with files available in this repository
+Procedure with all steps involved in setting up the website are provided in a document "CyberForensics_ProjectSite_GitHub_v1.docx" present in this repository for reference.
+
 ## Learning Outcomes
 The following are the expected  learning  outcomes  of the course:
 * Masters  of Science Degree:
