@@ -69,9 +69,6 @@ There are four sections, each would require a separate textbook. Here is the lis
 1. The Hacker Play Book 2: Practical Guide to Penetration Testing, Author: Peter Kim
 2. Hacking: The Art of Exploitation, Author: Jon Erickson
 
-## Additional References
-
-[WikiSET](https://asiamina.github.io/WikiSET/) is a portal, called Wiki for Security Training and Education, that lists useful materials and tutorials for teaching and learning digital forensics.
 
 ## Course Team-based Project
 
