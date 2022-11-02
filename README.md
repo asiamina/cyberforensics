@@ -1,6 +1,6 @@
 ## Update 
 (August 2022) The module on Capture-the-Flag (CTF) Challenges on Android Forensics is created and added to the tool 
-(August 2022) Digital-FIRE (Digital Forensic and Incident Response Exercies), an educational platform for collaborative solving of Capture-the-Flag (CTF) Challenges is published on GitHub.
+(August 2022) DigitalFIRE (Digital Forensic and Incident Response Exercies), an educational platform for collaborative solving of Capture-the-Flag (CTF) Challenges is published on GitHub.
 
 
 # Digital-FIRE: A Platform for practicing Capture-the-Flag (CTF) activities and solving challenges collaboratively. 
@@ -8,7 +8,7 @@
 ## Designed and Taught by: Dr. Akbar Namin
 ###### A CTF project on "Digital Forensics" designed and offered in the Computer Science Department at Texas Tech University
 
-Digital-FIRE (Digital Forensic and Incident Response Exercise) is an educational collaborative tool developed by the [Dr. Akbar Namin](http://www.depts.ttu.edu/cs/faculty/akbar_siami-namin/index.php)'s Research Team, an Associate Professor [Computer Science](http://www.depts.ttu.edu/cs/) at [Texas Tech University](http://www.ttu.edu/). The platform enables students to practice solving challenges  through step-by-step guidelines and discover pieces of data that are required to solve each challenge. The tool can be used for training and also recruiting students who eventually work as ethical hackers and penetration testing experts. 
+DigitalFIRE (Digital Forensic and Incident Response Exercise) is an educational collaborative tool developed by the [Dr. Akbar Namin](http://www.depts.ttu.edu/cs/faculty/akbar_siami-namin/index.php)'s Research Team, an Associate Professor [Computer Science](http://www.depts.ttu.edu/cs/) at [Texas Tech University](http://www.ttu.edu/). The platform enables students to practice solving challenges  through step-by-step guidelines and discover pieces of data that are required to solve each challenge. The tool can be used for training and also recruiting students who eventually work as ethical hackers and penetration testing experts. 
 
 Digital-FIRE is inspired by the Sandia National Lab digital forensics tool called ["Tracer FIRE"](https://www.osti.gov/servlets/purl/1251138) and more importantly the competition-based CTF activities and challenge solving often observed at hacking conferences such as DEFCON. 
 
