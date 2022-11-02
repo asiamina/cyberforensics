@@ -3,7 +3,7 @@
 (August 2022) DigitalFIRE (Digital Forensic and Incident Response Exercies), an educational platform for collaborative solving of Capture-the-Flag (CTF) Challenges is published on GitHub.
 
 
-# Digital-FIRE: A Platform for practicing Capture-the-Flag (CTF) activities and solving challenges collaboratively. 
+# DigitalFIRE: A Platform for practicing Capture-the-Flag (CTF) activities and solving challenges collaboratively. 
 ## Texas Tech University, Computer Science Department 
 ## Designed and Taught by: Dr. Akbar Namin
 ###### A CTF project on "Digital Forensics" designed and offered in the Computer Science Department at Texas Tech University
